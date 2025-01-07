@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { verify } from "../Services/authenticate";
+
 
 function AdminLogin() {
   const queryParameters = new URLSearchParams(window.location.search);
