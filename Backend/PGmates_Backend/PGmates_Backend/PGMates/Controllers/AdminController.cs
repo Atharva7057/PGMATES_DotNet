@@ -31,6 +31,7 @@ namespace PGMates.Controllers
                 OwnerCount = ownerCount,
                 PropertyCount = propertyCount
             });
+
         }
     }
 }
