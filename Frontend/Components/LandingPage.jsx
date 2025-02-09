@@ -1,7 +1,6 @@
 import "../CSS/LandingPage.css";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
-import PCHome from "../Images/PCHome.jpg"; // Importing the image correctly
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -10,10 +9,9 @@ function LandingPage() {
       <div
         id="container"
         style={{
-          backgroundImage: `url(${PCHome})`, // Using imported image
+          backgroundImage: "url('/PCHome.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh", // Ensure container takes full viewport height
         }}
       >
         <div id="overlay">
