@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, Outlet, useNavigate } from 'react-router-dom';
+import { Route, Routes, Outlet, useNavigate, Navigate } from 'react-router-dom';
 import AdminHome from '../Components/AdminComponents/AdminHome.jsx';
 import AdminNav from '../Components/AdminComponents/AdminNav.jsx';
 import AdminDashboard from '../Components/AdminComponents/AdminDashboard.jsx';
 import PropertiesList from '../Components/AdminComponents/PropertiesList.jsx';
 import AccessDenied from './AccessDenied.jsx';
 import UserLogin from '../Components/Login.jsx';
+import AdminUsers from '../Components/AdminComponents/AdminUsers.jsx';
+import AdminOwners from '../Components/AdminComponents/AdminOwners.jsx';
+import AdminPropertyListings from '../Components/AdminComponents/AdminPropertyListings.jsx';
 
 const AdminLayout = () => (
   <>
@@ -43,6 +46,11 @@ function AdminRoutes() {
     return null;
   }
 
+  // Redirect if user is not an admin
+  if (!isAdmin) {
+    return <Navigate to="/access-denied" replace />;
+  }
+
   return (
     <Routes>
       {/* Admin Layout Route */}
@@ -51,6 +59,9 @@ function AdminRoutes() {
         <Route path="admin-home" element={isAdmin ? <AdminHome /> : <AccessDenied />} />
         <Route path="dashboard" element={isAdmin ? <AdminDashboard /> : <AccessDenied />} />
         <Route path="property-listings" element={isAdmin ? <PropertiesList /> : <AccessDenied />} />
+        <Route path="manage-users" element={isAdmin ? <AdminUsers /> : <AccessDenied />} />
+        <Route path="manage-owners" element={isAdmin ? <AdminOwners /> : <AccessDenied />} />
+        <Route path="manage-properties" element={isAdmin ? <AdminPropertyListings /> : <AccessDenied />} />
       </Route>
 
       <Route path="access-denied" element={<AccessDenied />} />

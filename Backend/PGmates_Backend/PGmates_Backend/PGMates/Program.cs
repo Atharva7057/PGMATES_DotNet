@@ -80,6 +80,7 @@ builder.Services.AddScoped<IOwnerServices, OwnerService>();
 
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<IAdminServices, AdminServices>();
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("OWNER", policy => policy.RequireRole("OWNER"));
@@ -91,10 +92,14 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", builder =>
     {
-        builder.WithOrigins() 
-                .AllowAnyOrigin()// Specify the allowed origin
+        builder.WithOrigins()
+               .AllowAnyOrigin()// Specify the allowed origin
                .AllowAnyMethod()
                .AllowAnyHeader();
+        //builder.AllowAnyOrigin()
+        //           .AllowAnyMethod()
+        //           .AllowAnyHeader();
+
     });
 });
 
@@ -107,6 +112,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

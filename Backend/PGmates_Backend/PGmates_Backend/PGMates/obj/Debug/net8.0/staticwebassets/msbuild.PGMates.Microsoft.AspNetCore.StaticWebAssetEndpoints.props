@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/PGMates/images/room.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\room.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-r7H\u002Bvd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"13210"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022r7H\u002Bvd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w=\u0022"},{"Name":"Last-Modified","Value":"Sun, 26 Jan 2025 15:37:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PGMates/images/room.p237jgxg6s.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\room.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"p237jgxg6s"},{"Name":"integrity","Value":"sha256-r7H\u002Bvd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w="},{"Name":"label","Value":"_content/PGMates/images/room.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13210"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022r7H\u002Bvd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w=\u0022"},{"Name":"Last-Modified","Value":"Sun, 26 Jan 2025 15:37:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

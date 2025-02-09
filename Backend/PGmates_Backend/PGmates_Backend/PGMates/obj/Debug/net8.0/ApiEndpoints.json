@@ -1,8 +1,86 @@
 [
   {
     "ContainingType": "PGMates.Controllers.AdminController",
+    "Method": "DeleteOwner",
+    "RelativePath": "api/Admin/owner/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.AdminController",
+    "Method": "GetAllOwners",
+    "RelativePath": "api/Admin/owners",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.AdminController",
+    "Method": "GetListedProperties",
+    "RelativePath": "api/Admin/properties",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.AdminController",
+    "Method": "RemoveProperty",
+    "RelativePath": "api/Admin/property/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.AdminController",
     "Method": "GetDashboardStats",
     "RelativePath": "api/Admin/stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.AdminController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Admin/user/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.AdminController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Admin/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

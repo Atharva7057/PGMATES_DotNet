@@ -1,12 +1,125 @@
 {
   "Version": 1,
-  "Hash": "yPQ908dtZASdkCaYmnjdgaqwr1O2zQLFw3e27E7MqnA=",
+  "Hash": "2cowjwJ6aG7ek1q9bwigH1fcNOwobLAJJ0/+Wur+WX4=",
   "Source": "PGMates",
   "BasePath": "_content/PGMates",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "PGMates\\wwwroot",
+      "Source": "PGMates",
+      "ContentRoot": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\",
+      "BasePath": "_content/PGMates",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
+      "SourceId": "PGMates",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\",
+      "BasePath": "_content/PGMates",
+      "RelativePath": "images/room#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p237jgxg6s",
+      "Integrity": "r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\room.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/room.jpg",
+      "AssetFile": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13210"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 26 Jan 2025 15:37:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w="
+        }
+      ]
+    },
+    {
+      "Route": "images/room.p237jgxg6s.jpg",
+      "AssetFile": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13210"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 26 Jan 2025 15:37:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p237jgxg6s"
+        },
+        {
+          "Name": "label",
+          "Value": "images/room.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w="
+        }
+      ]
+    }
+  ]
 }

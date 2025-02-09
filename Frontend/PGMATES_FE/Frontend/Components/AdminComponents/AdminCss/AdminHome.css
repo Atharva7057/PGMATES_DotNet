@@ -17,7 +17,6 @@
     padding: 40px;
     text-align: center;
     
-    /* height: 250px; */
   }
   
   #welcome-container h1 {
@@ -38,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    /* border: 1px solid green; */
+    
   }
   
   .task-card {
@@ -78,4 +77,5 @@
       width: 100%;
     }
   }
-  
+
+   

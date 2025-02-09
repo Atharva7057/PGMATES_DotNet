@@ -11,5 +11,7 @@ namespace PGMates.DTO
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
+
+        public Roles Role { get; set; }
     }
 }
