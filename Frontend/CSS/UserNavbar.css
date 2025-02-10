@@ -9,6 +9,7 @@
   /* width: 100%; */
   /* border: 1px solid red; */
   margin: 0px 0px;
+  z-index: 1;
 }
 
 
@@ -21,7 +22,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   color: white;
-
+  z-index: 10000;
 }
 
 .logo {
@@ -73,15 +74,20 @@
   position: absolute;
   top: 40px;
   right: 10px;
-  /* margin-right: 100px; */
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 200px;
-  z-index: 1000;
+  z-index: 1050; /* Bootstrap's modal z-index is 1050, so use at least this */
   padding: 10px;
 }
+
+.card {
+  position: relative; /* Ensures stacking order works */
+  z-index: 1;
+}
+
 
 .tray-item {
   padding: 10px;
