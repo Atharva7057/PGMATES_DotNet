@@ -103,20 +103,31 @@ class OwnerServices {
       throw error;
     }
   }
-  async deleteProperty(propertyID) {
-    const token = sessionStorage.getItem("jwtToken");
+  // async deleteProperty(propertyID) {
+  //   const token = sessionStorage.getItem("jwtToken");
 
-    try {
-      const deleteResponse = await axios.delete(`${BASE_URL}/DeleteProperty/${propertyID}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+  //   try {
+  //     const deleteResponse = await axios.delete(`${BASE_URL}/DeleteProperty/${propertyID}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
 
-      return deleteResponse.data;
-    } catch (error) {
-      console.error("Error deleting property:", error);
-      throw error;
+  //     return deleteResponse.data;
+  //   } catch (error) {
+  //     console.error("Error deleting property:", error);
+  //     throw error;
+  //   }
+  // }
+
+  async deleteProperty(propertyID){
+    const userDetails = JSON.parse(sessionStorage.getItem('userDetails'));
+    const ownerId = userDetails.userID;
+    try{
+      const deleteSlotResponse = await axios.delete(`${BASE_URL}/DeleteProperty/${propertyID}`, this.getAuthHeaders());
+      return deleteSlotResponse.data;
+    }catch(error){
+      console.log(error);
     }
   }
 
@@ -144,6 +155,16 @@ class OwnerServices {
   //     console.log(error);
   //   }
   // }
+
+
+  async toggleAvailability(propertyID){
+    try{
+      const updateSlotResponse = await axios.put(`${BASE_URL}/toggleAvailability/${propertyID}`, this.getAuthHeaders());
+      return updateSlotResponse.data;
+    }catch(error){
+      console.log(error);
+    }
+  }
 
 }
 

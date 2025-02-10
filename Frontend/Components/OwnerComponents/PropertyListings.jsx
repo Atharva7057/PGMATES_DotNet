@@ -43,7 +43,7 @@ const PropertyListings = () => {
       // setAvailability(availabilityResponse.availability);
       setProperties((prevProperties) =>
         prevProperties.map((property) =>
-          property.propertyId === id
+          property.propertyID === id
             ? { ...property, isavailable: availabilityResponse.availability }
             : property
         )

@@ -10,5 +10,7 @@ namespace PGMates.Repository.Interfaces
         Task<List<PropertyDTOResOwner>> GetPropertiesByOwnerAsync(int ownerId);
         public Task<PropertyDTOResOwner> GetPropertyById(int id);
         Task<bool> DeleteProperty(int propertyId);
+
+        Task<bool> TogglePropertyAvailabilityAsync(int propertyId);
     }
 }

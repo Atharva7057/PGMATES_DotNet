@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "images/room.jpg",
+      "AssetFile": "images/room.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13210"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 02:10:34 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w="
+        }
+      ]
+    },
+    {
+      "Route": "images/room.p237jgxg6s.jpg",
+      "AssetFile": "images/room.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13210"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 02:10:34 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p237jgxg6s"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-r7H+vd/jWSyAGfpHEFnoWTbTW6kavUYfMQNnhySuG1w="
+        },
+        {
+          "Name": "label",
+          "Value": "images/room.jpg"
+        }
+      ]
+    }
+  ]
+}

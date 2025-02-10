@@ -230,5 +230,16 @@ namespace PGMates.Repository.Implementation
             }
         }
 
+        public async Task<bool> TogglePropertyAvailabilityAsync(int propertyId)
+        {
+            var property = await _context.Properties.FindAsync(propertyId);
+            if (property == null) return false;
+
+            property.IsAvailable = !property.IsAvailable;
+            await _context.SaveChangesAsync(); // Update database
+
+            return property.IsAvailable; // Return new status
+        }
+
     }
 }

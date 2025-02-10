@@ -100,5 +100,16 @@ namespace PGMates.Controllers
             return Ok(property);
         }
 
+        //toggle the pointer
+        [HttpPut("toggleAvailability/{propertyId}")]
+        [Authorize(Roles = "OWNER")]
+        public async Task<IActionResult> ToggleAvailability(int propertyId)
+        {
+            var response = await _ownerServices.TogglePropertyAvailability(propertyId);
+            return Ok(response);
+        }
+
+
+
     }
 }

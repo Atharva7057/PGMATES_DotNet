@@ -36,5 +36,14 @@ namespace PGMates.Services.Implementation
         {
             return await ownerRepository.GetPropertyById(id);
         }
+
+        public async Task<AvailabilityResponse> TogglePropertyAvailability(int propertyId)
+        {
+            var newAvailability = await ownerRepository.TogglePropertyAvailabilityAsync(propertyId);
+
+            return newAvailability
+                ? new AvailabilityResponse("Property marked as Available.", true)
+                : new AvailabilityResponse("Property marked as Unavailable.", false);
+        }
     }
 }

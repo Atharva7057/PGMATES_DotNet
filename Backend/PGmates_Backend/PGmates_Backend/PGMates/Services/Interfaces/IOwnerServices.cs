@@ -10,5 +10,6 @@ namespace PGMates.Services.Interfaces
         public Task<bool> DeletePropertyAsync(int propertyId);
 
         public Task<PropertyDTOResOwner> GetPropertyById(int id);
+        public Task<AvailabilityResponse> TogglePropertyAvailability(int propertyId);
     }
 }
