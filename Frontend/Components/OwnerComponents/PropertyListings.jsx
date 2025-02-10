@@ -1,118 +1,168 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./OwnerCSS/PropertyListings.css";
+import OwnerServices from "../../Services/OwnerServices/ownerServices.js";
+
+import { useNavigate } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import { toast } from 'react-toastify';
 
 const PropertyListings = () => {
-  const [properties, setProperties] = useState([
-    {
-      id: 1,
-      title: "3BHK Apartment in Downtown",
-      status: "Available",
-      price: "$500,000",
-      area: "1200 sqft",
-      description:
-        "A spacious 3BHK apartment with modern amenities in the heart of Downtown.",
-    },
-    {
-      id: 2,
-      title: "2BHK Villa with Garden",
-      status: "Available",
-      price: "$350,000",
-      area: "1500 sqft",
-      description:
-        "A beautiful 2BHK villa with a garden and quiet surroundings perfect for families.",
-    },
-    {
-      id: 3,
-      title: "Luxury Penthouse in City Center",
-      status: "Available",
-      price: "$1,200,000",
-      area: "2500 sqft",
-      description:
-        "A luxurious penthouse with stunning city views and top-notch facilities.",
-    },
-  ]);
+  const navigate = useNavigate();
+  const [properties, setProperties] = useState([]);
+  const [show, setShow] = useState(false);
+  const [deletePropertyId, setDeletePropertyId] = useState(null);
+  const [Availability, setAvailability] = useState();
+  useEffect(() => {
+    const fetchProperties = async () => {
+      const propertiesData = await OwnerServices.getAllPropertiesByOwner();
+      setProperties(propertiesData);
+    };
+    fetchProperties();
+  }, []);
 
-  const markUnavailable = (id) => {
-    setProperties((prev) =>
-      prev.map((property) =>
-        property.id === id ? { ...property, status: "Unavailable" } : property
-      )
-    );
-  };
+  const deleteProperty = (id) => {
+    console.log("Delete property with ID:", id);
+    setDeletePropertyId(id);  // ✅ More descriptive naming
+    handleShow();  // ✅ Show the confirmation modal
+};
 
-  
-  const userDetails = JSON.parse(sessionStorage.getItem('userDetails'));
-  const userID = userDetails.userID;
-  console.log(userID);
   const updateProperty = (id) => {
-    const updatedTitle = prompt("Enter the new title for the property:");
-    setProperties((prev) =>
-      prev.map((property) =>
-        property.id === id ? { ...property, title: updatedTitle } : property
-      )
-    );
+    console.log("in update property", id);
+
+    navigate(`UpdateProperty?pid=${id}`);
   };
+
+  const markUnavailable = async (id) => {
+    console.log("Mark property as unavailable with ID:", id);
+    try {
+      const availabilityResponse = await OwnerServices.toggleAvailability(id);
+      console.log(availabilityResponse.message);
+
+      toast.success(availabilityResponse.message);
+      // setAvailability(availabilityResponse.availability);
+      setProperties((prevProperties) =>
+        prevProperties.map((property) =>
+          property.propertyId === id
+            ? { ...property, isavailable: availabilityResponse.availability }
+            : property
+        )
+      );
+    } catch (error) {
+      if (Availability) {
+        toast.error("Error Marking Unavailable");
+      } else {
+        toast.error("Error Marking available")
+      }
+
+    }
+  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const confirmDelete = async () => {
+    if (!deletePropertyId) return;
+
+    try {
+      const deleteResponse = await OwnerServices.deleteProperty(deletePropertyId);
+      toast.success(deleteResponse.message);
+
+      // Remove the deleted property from state
+      setProperties(properties.filter(property => property.propertyID !== deletePropertyId));
+    } catch (error) {
+      toast.error("Error Deleting Property");
+    }
+
+    setDeletePropertyId(null);
+    handleClose();
+  }
 
   return (
-    <div className="container">
-      <h2>Properties Listed by You</h2>
-      <div className="property-cards">
-        {properties.map((property) => (
-          <div key={property.id} className="card">
-            <div className="card-body">
-              <h5 className="card-title">{property.title}</h5>
-              <p className="card-text">
-                <strong>Status:</strong> {property.status}
-              </p>
-              <p className="card-text">
-                <strong>Price:</strong> {property.price}
-              </p>
-              <p className="card-text">
-                <strong>Area:</strong> {property.area}
-              </p>
-              <p className="card-text">
-                <strong>Description:</strong> {property.description}
-              </p>
-              <button
-                style={{
-                  backgroundColor: "blue",
-                  color: "white",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                }}
-                onClick={() => updateProperty(property.id)}
-              >
-                Update
-              </button>
+    <>
+      <div className="container-fluid mt-12">
+        <h2 className="text-center mb-12">Your Listed Properties</h2>
+        <div className={`row ${properties.length === 1 ? "d-flex justify-content-center" : ""}`}>
+          {properties.map((property) => (
+            <div id="outer-container">
 
-              <button
-                style={{
-                  backgroundColor: "red",
-                  color: "white",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                }}
-                onClick={() => deleteProperty(property.id)}
-              >
-                Delete
-              </button>
 
-              <button
-                style={{
-                  backgroundColor: "green",
-                  color: "white",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                }}
-                onClick={() => markUnavailable(property.id)}
-              >
-                Mark as Unavailable
-              </button>
+              <div key={property.id} className="col-md-12 mb-3">
+                <div className="card shadow-sm h-100">
+
+                  <div className="card-body">
+                    <img
+                      src={`../../Images/${property.image}`}
+                      // className="card-img-top"
+                      alt={property.title}
+                      style={{ height: "150px", width: "250px", float: "right", borderRadius: "5px" }}
+                    />
+                    <h5 className="card-title">{property.location + "," + property.address.city}</h5>
+                    <table className="table" style={{ width: "fit-content" }}>
+                      <tbody>
+                        <tr>
+                          <td>📍 <strong>Address:</strong></td>
+                          <td>
+                            {property.address.addressLine1 + ", " +
+                              property.address.addressLine2 + ", " +
+                              property.address.city}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>💰 <strong>Rent:</strong></td>
+                          <td>Rs. {property.rent} /Month</td>
+                        </tr>
+                        <tr>
+                          <td>🏦 <strong>Deposit:</strong></td>
+                          <td>Rs. {property.deposit}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                  <div className="card-footer d-flex justify-content-between">
+                    <button onClick={() => navigate(`/owner/UpdateProperty?pid=${property.propertyID}`)} className="btn-primary">
+                      Update
+                    </button>
+                    <button onClick={() => deleteProperty(property.propertyID)}>
+                      Delete
+                    </button>
+                    <button
+                      onClick={() => markUnavailable(property.propertyID)}
+                      className={property.isavailable ? "btn-danger" : "btn-success"}
+                    >
+                      {property.isavailable ? "Mark Unavailable" : "Mark Available"}
+                    </button>
+                    <button onClick={() => navigate(`/owner/ManageProperty?propertyId=${property.propertyID}`)} className="btn-primary">
+                      Manage Property
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Delete Property</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p style={{ color: "red", fontWeight: "bolder" }}>Are You Sure You Want To Delete This Property?
+            All the data will be lost forever.
+          </p>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <button onClick={confirmDelete}>confirm</button>
+          <button onClick={handleClose}>Cancel</button>
+        </Modal.Footer>
+      </Modal>
+    </>
+
+
+
   );
 };
 

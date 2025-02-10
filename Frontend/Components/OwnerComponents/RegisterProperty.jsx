@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import { Helmet } from "react-helmet"; // Import Helmet for adding Bootstrap CSS dynamically
 import "./OwnerCSS/RegisterPropertyCss.css";
-import Ownerservice from "../../Services/OwnerServices/Ownerservice";
+import Ownerservices from "../../Services/OwnerServices/ownerServices.js";
+//import ownerServices from "../../Services/OwnerServices/ownerServices.js";
+import { toast } from "react-toastify";
 function RegisterProperty() {
   const [formData, setFormData] = useState({
     rent: "",
@@ -152,11 +154,14 @@ function RegisterProperty() {
         console.log("Image file:", formData.image);
       }
       
-      const response = await Ownerservice.registerProperty(formData);
+      const response = await Ownerservices.registerProperty(formData);
       // Optionally reset form data after successful submission
       console.log(response);
       
-      alert(response.message);
+      //alert(response.message);
+      //toast.success(response.message);
+      //toast.success(response.Message)
+      toast.success("Property listed successfully!");
       setFormData({
         rent: "",
         deposit: "",
@@ -174,11 +179,11 @@ function RegisterProperty() {
         capacity: "",
         gender: "",
         image: null,
-        
       });
     } else {
       console.log("Form has errors. Cannot submit.");
       console.log(errors); // Log errors if any
+      toast.error(errors);
     }
   };
 

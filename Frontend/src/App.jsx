@@ -7,6 +7,8 @@ import AdminLogin from '../Components/AdminLogin';
 import UserRoutes from "./UserRoutes";
 import OwnerRoutes from "./OwnerRoutes";
 import AdminRoutes from "./AdminRoutes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
@@ -24,6 +26,7 @@ function App() {
         <Route path="/admin/*" element ={<AdminRoutes/>}/>
       </Routes>
     </Router>
+    <ToastContainer position="top-right" autoClose={3000} />
     </>
   )
 }

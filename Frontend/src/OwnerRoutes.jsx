@@ -8,6 +8,7 @@ import Services from "../Components/OwnerComponents/Services";
 import Appointments from "../Components/OwnerComponents/Appointments";
 import PropertyListings from "../Components/OwnerComponents/PropertyListings";
 import RegisterProperty from '../Components/OwnerComponents/RegisterProperty';
+import UpdateProperty  from '../Components/OwnerComponents/UpdateProperty.jsx';
 import Profile from "../Components/OwnerComponents/Profile";
 import AccessDenied from './AccessDenied';
 import UserLogin from '../Components/Login';
@@ -60,6 +61,7 @@ function OwnerRoutes() {
         <Route path="registerproperty" element={isOwner ? <RegisterProperty /> : <AccessDenied />} />
         <Route path="contact" element={isOwner ? <ContactUs /> : <AccessDenied />} />
         <Route path="profile" element={isOwner ? <Profile /> : <AccessDenied />} />
+        <Route path="UpdateProperty" element={isOwner ? < UpdateProperty/> : <AccessDenied />} />
       </Route>
 
       {/* Routes for non-authenticated users */}

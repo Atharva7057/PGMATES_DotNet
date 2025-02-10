@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj": {}
+    "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj": {}
   },
   "projects": {
-    "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj": {
+    "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj",
+        "projectUniqueName": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj",
         "projectName": "PGMates",
-        "projectPath": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\obj\\",
+        "projectPath": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\PGMates.csproj",
+        "packagesPath": "C:\\Users\\Arvind\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Arvind\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

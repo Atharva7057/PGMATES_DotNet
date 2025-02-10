@@ -230,6 +230,29 @@
         }
       }
     },
+    "/api/Owner/GetPropertiesByOwner/{ownerId}": {
+      "get": {
+        "tags": [
+          "Owner"
+        ],
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Owner/UpdateProperty/{id}": {
       "put": {
         "tags": [
@@ -250,26 +273,72 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/PropertyDTOReq"
+                "$ref": "#/components/schemas/UpdatePropertyDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PropertyDTOReq"
+                "$ref": "#/components/schemas/UpdatePropertyDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PropertyDTOReq"
+                "$ref": "#/components/schemas/UpdatePropertyDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PropertyDTOReq"
+                "$ref": "#/components/schemas/UpdatePropertyDTO"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Owner/DeleteProperty/{propertyId}": {
+      "delete": {
+        "tags": [
+          "Owner"
+        ],
+        "parameters": [
+          {
+            "name": "propertyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Owner/getPropertyDetailsById/{id}": {
+      "get": {
+        "tags": [
+          "Owner"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -550,6 +619,62 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "UpdatePropertyDTO": {
+        "type": "object",
+        "properties": {
+          "amenities": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deposit": {
+            "type": "number",
+            "format": "double"
+          },
+          "forGender": {
+            "type": "string",
+            "nullable": true
+          },
+          "furnishType": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "nearByPlaces": {
+            "type": "string",
+            "nullable": true
+          },
+          "rent": {
+            "type": "number",
+            "format": "double"
+          },
+          "isAvailable": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressDTOreq"
+          }
+        },
+        "additionalProperties": false
       }
     }
   }

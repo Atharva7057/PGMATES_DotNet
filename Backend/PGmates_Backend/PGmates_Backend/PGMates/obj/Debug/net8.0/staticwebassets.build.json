@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2cowjwJ6aG7ek1q9bwigH1fcNOwobLAJJ0/+Wur+WX4=",
+  "Hash": "693PDMCRdl/HpFh0klQs+ByV50fT50kqdTfjoXmFawQ=",
   "Source": "PGMates",
   "BasePath": "_content/PGMates",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "PGMates\\wwwroot",
       "Source": "PGMates",
-      "ContentRoot": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\",
       "BasePath": "_content/PGMates",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
+      "Identity": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
       "SourceId": "PGMates",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\",
       "BasePath": "_content/PGMates",
       "RelativePath": "images/room#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -41,7 +41,7 @@
   "Endpoints": [
     {
       "Route": "images/room.jpg",
-      "AssetFile": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
+      "AssetFile": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -62,7 +62,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 26 Jan 2025 15:37:10 GMT"
+          "Value": "Mon, 10 Feb 2025 02:10:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -78,7 +78,7 @@
     },
     {
       "Route": "images/room.p237jgxg6s.jpg",
-      "AssetFile": "F:\\CDac\\MAIN PROJECT\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
+      "AssetFile": "C:\\Users\\Arvind\\Desktop\\Dotnet final\\PGMATES_DotNet\\Backend\\PGmates_Backend\\PGmates_Backend\\PGMates\\wwwroot\\images\\room.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -99,7 +99,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 26 Jan 2025 15:37:10 GMT"
+          "Value": "Mon, 10 Feb 2025 02:10:34 GMT"
         },
         {
           "Name": "Cache-Control",

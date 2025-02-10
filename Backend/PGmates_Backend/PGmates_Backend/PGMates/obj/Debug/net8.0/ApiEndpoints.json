@@ -121,6 +121,54 @@
   },
   {
     "ContainingType": "PGMates.Controllers.OwnerController",
+    "Method": "DeletePropertyByIdAsync",
+    "RelativePath": "api/Owner/DeleteProperty/{propertyId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "propertyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.OwnerController",
+    "Method": "GetPropertiesByOwner",
+    "RelativePath": "api/Owner/GetPropertiesByOwner/{ownerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.OwnerController",
+    "Method": "GetPropertyDetailsById",
+    "RelativePath": "api/Owner/getPropertyDetailsById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PGMates.Controllers.OwnerController",
     "Method": "Post",
     "RelativePath": "api/Owner/RegisterProperty",
     "HttpMethod": "POST",
@@ -150,7 +198,7 @@
       },
       {
         "Name": "dto",
-        "Type": "PGMates.DTO.PropertyDTOReq",
+        "Type": "PGMates.DTO.UpdatePropertyDTO",
         "IsRequired": true
       }
     ],
